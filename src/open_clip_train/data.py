@@ -24,7 +24,8 @@ try:
     import horovod.torch as hvd
 except ImportError:
     hvd = None
-
+    
+Image.MAX_IMAGE_PIXELS = None
 
 class CsvDataset(Dataset):
     def __init__(self, input_filename, transforms, img_key, caption_key, sep="\t", tokenizer=None):
